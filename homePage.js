@@ -1,1 +1,0 @@
-const getDashboard = () => {oi}
