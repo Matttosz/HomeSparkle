@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="Login.css">
+    <title>Login HomeSparkle</title>
 </head>
-
 <body>
-
-    <div class="container" id="container">
-        <div class="form-containerLog">
+    <div class="Container" id="Container">
+        <div class="FormContainer Cadastro">
             <form>
                 <h1>Criar conta</h1>
-                <div class="iconesredes">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <div class="Icones">
+                    <a href="#" class="Icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="Icon"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
-                <span>ou utilze seu email para o registro</span>
+                <span>ou use seu e-mail para o registro</span>
                 <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <input type="senha" placeholder="Senha">
-                <button>Sign Up</button>
+                <input type="email" placeholder="E-mail">
+                <input type="password" placeholder="Senha">
+                <button>Criar</button>
             </form>
         </div>
-        <div class="form-containerEnt">
+        <div class="FormContainer Login">
             <form>
-                <h1>Entrar</h1>
-                <div class="iconesredes">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <h1>Entre</h1>
+                <div class="Icones">
+                    <a href="#" class="Icone"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="Icone"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
-                <span>ou use seu email registrado</span>
+                <span>ou use seu e-mail</span>
                 <input type="email" placeholder="Email">
-                <input type="senha" placeholder="Senha">
+                <input type="password" placeholder="Password">
                 <a href="#">Esqueceu sua senha?</a>
                 <button>Entrar</button>
             </form>
         </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-esquerdo">
-                    <h1>Bem Vindo Novamente!</h1>
-                    <p>Entre na sua conta para ver seu consumo mensal</p>
-                    <button class="oculto" id="login">Sign In</button>
+        <div class="AlternarContainer">
+            <div class="Alternar">
+                <div class="AlternarPainel AlternarEsquerda">
+                    <h1>HomeSparkle</h1>
+                    <p>Entre com seu e-mail pessoal para acessar as funcionalidades</p>
+                    <button class="Ocultar" id="Login">Entrar</button>
                 </div>
-                <div class="toggle-panel toggle-direito">
-                    <h1>Olá, homesparkling!</h1>
-                    <p>Entre com seu email para ter acesso ao seu consumo mensal</p>
-                    <button class="oculto" id="registro">Entrar</button>
+                <div class="AlternarPainel AlternarDireita">
+                    <h1>HomeSparkle</h1>
+                    <p>Registre-se com seu e-mail para ter acesso às funcionalidades</p>
+                    <button class="Ocultar" id="Registro">Registre-se</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="Login.js"></script>
 </body>
-
 </html>
