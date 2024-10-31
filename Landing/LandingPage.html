@@ -1,79 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeSparkle</title>
-    <link rel="stylesheet" href="/HomeSparkle-main/Landing/LandingPageStyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>HomeSparkle - Sistema de Medição de Energia</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="LandingPageStyle.css">
 </head>
 <body>
-    <nav>
-        <div class="nav_header">
-            <div class="nav_logo">
-                <a href="#">HomeSparkle</a>
-            </div>
-            <div class="nav_botao_menu" id="botao_menu">
-                <i class="ri-menu-line"></i>
-            </div>
-        </div>
-        <ul class="nav_links" id="nav-links">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">SOBRE NÓS</a></li>
-            <li><a href="#">CONTATO</a></li>
-        </ul>
-        <div class="nav_botoes">
-            <button class="botao">
-                <i class="ri-search-line"></i>
-            </button>
-            <button class="botao">
-                <i class="ri-shopping-bag-line"></i>
-            </button>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="container_esquerda">
-            <h1>Reserve já</h1>
-            <div class="container_botao">
-                <button class="botao"><a href="LandingPageStyle.css">Entre</a></button>
-            </div>
-        </div>
-        <div class="container_direita">
-            <div class="imagens">
-                <img src="/HomeSparkle-main/ImagesAssets/lampada.jpg" alt="lampada" class="lampada">
-                <img src="/HomeSparkle-main/ImagesAssets/luz.jpg" alt="luz" class="luz">
-            </div>
-            <div class="conteudo">
-                <h4>Um novo jeito de economizar</h4>
-                <h2>HomeSparkle</h2>
-                <h3>Uma experiência diferente</h3>
-                <p>
-                    HomeSparkle é um sistema de medição de energia online projetado para monitorar e gerenciar o consumo energético de sua residência de forma eficiente. 
-                    Com ele, você pode acompanhar em tempo real o uso de eletricidade, 
-                    identificar padrões de consumo e receber dicas personalizadas para economizar energia, 
-                    contribuindo para um ambiente mais sustentável e reduzindo suas despesas mensais.
-                </p>
-            </div>
-        </div>
-        <div class="locacao">
-            <span><i class="ri-map-pin-2-fill"></i></span>
-            Nossa Localização
-        </div>
-        <div class="redes">
-            <span>
-                <a href="https://web.facebook.com/?locale=pt_BR&_rdc=1&_rdr"><i class="ri-facebook-fill"></i></a>
-            </span>
-            <span>
-                <a href="https://twitter.com/?lang=pt-br"><i class="ri-twitter-fill"></i></a>
-            </span>
-            <span>
-                <a href="https://www.instagram.com/"><i class="ri-instagram-line"></i></a>
-            </span>
-        </div>
-    </div>
+    <div class="Container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Entrar</a></li>
+            </ul>
+        </nav>
 
-    <script src="LandingPageEvent.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+        <div class="Principal">
+            <div class="TextoPrincipal">
+                <img src="img/LogoHomeSparkle.png" alt="Lâmpada" class="Lampada">
+                <div class="ConteudoPrincipal">
+                    <h1>HomeSparkle</h1>
+                    <p>O HomeSparkle é um sistema inovador de medição de energia, projetado para ajudar os usuários a
+                        monitorar e otimizar o consumo energético de suas residências.</p>
+                    <button>Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="BlocoMeio">
+            <div class="Blocos">
+                <div class="Imagens">
+                    <img src="img/energia-eletrica.png" alt="">
+                </div>
+                <div class="TextoBlocos">
+                    <h3>Medição rápida</h3>
+                    <p>Criteriosa e veloz.</p>
+                </div>
+            </div>
+            <div class="Blocos">
+                <div class="Imagens">
+                    <img src="img/lampada.png" alt="">
+                </div>
+                <div class="TextoBlocos">
+                    <h3>Seguro</h3>
+                    <p>Prático e eficiente.</p>
+                </div>
+            </div>
+            <div class="Blocos">
+                <div class="Imagens">
+                    <img src="img/energia-solar.png" alt="">
+                </div>
+                <div class="TextoBlocos">
+                    <h3>Personalizado</h3>
+                    <p>Se adequa a cada caso.</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="BlocoSecundario">
+            <h2>O que o sistema faz?</h2>
+            <div class="Agrupamentos">
+                <div class="Agrupamento">
+                    <h3>Medição em Tempo Real</h3>
+                    <p>Nosso sistema oferece medições de energia em tempo real, permitindo que os usuários acompanhem
+                        seu consumo a qualquer momento.</p>
+                </div>
+                <div class="Agrupamento">
+                    <h3>Análises Detalhadas</h3>
+                    <p>Fornecemos análises detalhadas do consumo energético, ajudando os usuários a identificar padrões
+                        e oportunidades de economia.</p>
+                </div>
+                <div class="Agrupamento">
+                    <h3>Dicas de Economia</h3>
+                    <p>Com base nos dados coletados, oferecemos dicas personalizadas para ajudar os usuários a reduzir o
+                        consumo de energia e economizar dinheiro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="BlocoTerciario">
+            <h2>Criadores</h2>
+            <div class="Agrupamentos">
+                <div class="Agrupamento">
+                    <img src="foto-joao-vitor.jpg" alt="João Vitor da Silva">
+                    <h3>João Vitor da Silva</h3>
+                    <p>João Vitor é o desenvolvedor responsável pela criação e manutenção do design CSS do HomeSparkle. Ele garantiu que a interface fosse intuitiva e visualmente atraente, focando na experiência do usuário.</p>
+                </div>
+                <div class="Agrupamento">
+                    <img src="foto-murilo.jpg" alt="Murilo Augusto de Mattos Marciano">
+                    <h3>Murilo Augusto de Mattos Marciano</h3>
+                    <p>Murilo Augusto é o desenvolvedor back-end do projeto, especializado na implementação de algoritmos em PHP. Ele criou as funcionalidades principais do sistema, garantindo que as medições de energia fossem precisas e eficientes.</p>
+                </div>
+                <div class="Agrupamento">
+                    <img src="foto-mell.jpg" alt="Mell Cristiny Alves da Costa">
+                    <h3>Mell Cristiny Alves da Costa</h3>
+                    <p>Mell Cristiny é responsável pela curadoria da qualidade da experiência do usuário e pelo design do dashboard. Ela trabalhou no refinamento do CSS e na criação de um dashboard intuitivo, melhorando a interação do usuário com o sistema.</p>
+                </div>
+            </div>            
+    </div>
 </body>
 </html>
-
