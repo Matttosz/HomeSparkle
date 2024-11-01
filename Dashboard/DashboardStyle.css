@@ -82,7 +82,7 @@ a:hover {
     bottom: 0;
 }
 
-/* Sessão principal do Dashboard */
+
 .BlocoPrincipal {
     position: relative;
     padding: 20px;
@@ -144,7 +144,6 @@ a:hover {
     padding: 10px;
 }
 
-/* Gráficos */
 .Graficos {
     margin-top: 20px;
     text-transform: capitalize;
