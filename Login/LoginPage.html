@@ -10,29 +10,30 @@
 <body>
     <div class="Container" id="Container">
         <div class="FormContainer Cadastro">
-            <form>
+            <form action="DatabaseInjection.php" method="POST">
                 <h1>Criar conta</h1>
                 <div class="Icones">
                     <a href="#" class="Icon"><i class="fa-brands fa-google"></i></a>
                     <a href="#" class="Icon"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
                 <span>ou use seu e-mail para o registro</span>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
+                <input type="text" name="UserName" placeholder="Qual seu nome?">
+                <input type="email"name="UserEmail" placeholder="Nos diga seu e-mail">
+                <input type="password" name="UserPassword"placeholder="Digite sua senha">
+                <input type="password" name="PasswordTest"placeholder="Confirme sua Senha">
                 <button>Criar</button>
             </form>
         </div>
         <div class="FormContainer Login">
-            <form>
+            <form action="processPage.Php" method="POST">
                 <h1>Entre</h1>
                 <div class="Icones">
                     <a href="#" class="Icone"><i class="fa-brands fa-google"></i></a>
                     <a href="#" class="Icone"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
                 <span>ou use seu e-mail</span>
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
+                <input type="email" name="UserEmail" placeholder="E-mail">
+                <input type="password" name="UserPassword" placeholder="Senha">
                 <a href="#">Esqueceu sua senha?</a>
                 <button>Entrar</button>
             </form>
