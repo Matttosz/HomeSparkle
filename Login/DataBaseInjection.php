@@ -1,5 +1,5 @@
 <?php
-include "ConnectionDB.php";
+include "ProcessPage.php";
 $UserName     = $_POST['UserName'];
 $UserEmail    = $_POST['UserEmail'];
 $UserAge      = $_POST['UserAge'];
@@ -16,10 +16,12 @@ $PreparingSqlInjection = $DataBaseConnection->prepare($DataBaseUserInjection);
 $PreparingSqlInjection->bind_param("siss" , $UserName , $UserAge , $UserEmail , $UserPassword);
 
 if ($PreparingSqlInjection->execute()) {
-    echo "User  registered successfully.";
+    header("location:/Dashboard/DashboardPage.html");
+    exit;
 } else {
     echo "Error: " . htmlspecialchars($PreparingSqlInjection->error);
 }
 
 $DataBaseConnection->close();
 ?>
+//criar array na injeção mysql, para enviar os dados de ususario para o site 
