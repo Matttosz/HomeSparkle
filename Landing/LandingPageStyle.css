@@ -99,6 +99,9 @@ body {
     line-height: 1.5;
 }
 
+.Cadastre-Se_Button{
+color:yellow ;
+};
 button {
     padding: 10px 20px;
     font-size: 1em;
