@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="HomeSparkleDashboard.css">
+    <link rel="stylesheet" href="DashboardStyle.css">
     <title>Página Principal - Dashboard</title>
 </head>
 <body>
@@ -67,7 +67,7 @@
             s[0]&&""!=s[0]&&(x.from=s[0]);s[1]&&""!=s[1]&&(x.to=s[1]);s[2]&&""!=s[2]&&(x.color=s[2]);e.highlights.push(x)}break;case "animation":d[1]&&(e.animation||(e.animation={}),"fn"==d[1]&&/^\s*function\s*\(/.test(g)&&(g=eval("("+g+")")),e.animation[d[1]]=g);break;default:d=b(d);if("onready"==d)continue;if("majorTicks"==d)g=g.split(/\s+/);else if("strokeTicks"==d||"glow"==d)g="true"==g?!0:!1;else if("valueFormat"==d)if(g=g.split("."),2==g.length)g={"int":parseInt(g[0],10),dec:parseInt(g[1],10)};else continue;
             e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.getAttribute("data-value")));k.getAttribute("data-onready")&&(e.onready=function(){eval(this.config.renderTo.getAttribute("data-onready"))});e.draw()}});window.Gauge=Gauge;
             <!-- Gauge Code Ends -->
-            </script> 
+            </script>        
 
         <section class="BlocoPrincipal">
             <section class="MedidorEnergia">
@@ -76,9 +76,9 @@
                 <canvas id="an_gauge_1" data-major-ticks="0 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500" data-type="canv-gauge" data-min-value="0" data-max-value="5500" data-onready="setInterval( function() { Gauge.Collection.get('an_gauge_1').setValue(data_val);}, 1000);"></canvas>
                 <canvas id="an_gauge_2" width="400px" height="200px " data-type="canv-gauge"></canvas>
                 <div class="Medidas">
-                    <pre><img src="/ImagesAssets/poder.png" alt="Potência" class="MedidasIcone"> Potência(W): <span id="input3">...</span></pre>
-                    <pre><img src="/ImagesAssets/controle-de-energia.png" alt="Corrente" class="MedidasIcone"> Corrente(A): <span id="input4">...</span></pre>
-                    <pre><img src="/ImagesAssets/moedas.png" alt="Consumo" class="MedidasIcone"> Consumo(R$): <span id="input5">...</span></pre>
+                    <pre><img src="poder.png" alt="Potência" class="MedidasIcone"> Potência(W): <span id="input3">...</span></pre>
+                    <pre><img src="controle-de-energia.png" alt="Corrente" class="MedidasIcone"> Corrente(A): <span id="input4">...</span></pre>
+                    <pre><img src="moedas.png" alt="Consumo" class="MedidasIcone"> Consumo(R$): <span id="input5">...</span></pre>
                 </div>
                 <hr size="18" color="purple">
             </section>
@@ -104,5 +104,26 @@
             </section>
         </section>
     </div>
+
+    <div id="PopupPotencia" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupPotencia')">&times;</span>
+            <p>Potência é a grandeza que determina a quantidade de energia concedida por uma fonte a cada unidade de tempo. Em outros termos, potência é a rapidez com a qual uma certa quantidade de energia é transformada ou é a rapidez com que o trabalho é realizado.</p>
+        </div>
+    </div>
+    <div id="PopupCorrente" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupCorrente')">&times;</span>
+            <p>Corrente elétrica é o fluxo ordenado de partículas portadoras de carga elétrica ou o deslocamento de cargas dentro de um condutor, quando existe uma diferença de potencial elétrico entre as extremidades. Tal deslocamento procura restabelecer o equilíbrio desfeito pela ação de um campo elétrico ou outros meios.</p>
+        </div>
+    </div>
+    <div id="PopupConsumo" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupConsumo')">&times;</span>
+            <p>Consumo de energia é a quantidade de energia elétrica que é utilizada em um determinado período de tempo. O consumo de energia depende de dois fatores: a potência do equipamento e o tempo de uso.</p>
+        </div>
+    </div>
+
+    <script src="DashboardEvents.js"></script>
 </body>
 </html>
