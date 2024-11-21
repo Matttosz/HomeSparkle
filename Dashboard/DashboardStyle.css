@@ -11,7 +11,7 @@
 }
 
 body {
-    background: linear-gradient(to right, #ac71be, #e6e470);
+    background: linear-gradient(to right, #fbff00, #500850);
 }
 
 .Container {
@@ -19,15 +19,14 @@ body {
 }
 
 nav {
-    position: relative;
+    position: fixed; 
     top: 0;
-    bottom: 0;
-    height: 100vh;
     left: 0;
+    height: 100vh; 
     background: #fff;
     width: 280px;
-    overflow: hidden;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
 }
 
 .Logo {
@@ -44,7 +43,7 @@ nav {
 
 .Logo span {
     font-weight: bold;
-    padding-left: 15px;
+    padding-left: 16px;
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -67,6 +66,91 @@ nav .fas {
     text-align: center;
 }
 
+.MedidorEnergia {
+    margin-top: 20px;
+    background: linear-gradient(to right, #ffffff, #47063c);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav a {
+    position: relative;
+    color: black; 
+    font-size: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+    transition: all 0.3s ease; 
+}
+
+nav a:hover {
+    background: #eee; 
+    color: #771777; 
+}
+
+nav .fas {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+    transition: color 0.3s ease; 
+}
+
+nav a:hover .fas {
+    color: #771777; 
+}
+
+.Navegacao {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    transition: color 0.3s ease; 
+}
+
+nav a:hover .Navegacao {
+    color: #771777;
+}
+
+.Destaque a {
+    background: #eee; 
+    color: #771777; 
+}
+
+.Destaque .fas {
+    color: #771777; 
+}
+
+.Destaque .Navegacao {
+    color: #771777; 
+}
+
+.MedidorEnergia h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.MedidorEnergia hr {
+    margin: 20px 0;
+}
+
+.MedidorEnergia canvas {
+    margin: 20px;
+    display: inline-block;
+}
+
+.MedidorEnergia pre {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.MedidorEnergia span {
+    font-weight: bold;
+}
+
 .Navegacao {
     position: relative;
     top: 12px;
@@ -82,11 +166,10 @@ a:hover {
     bottom: 0;
 }
 
-
 .BlocoPrincipal {
-    position: relative;
     padding: 20px;
-    width: 100%;
+    width: calc(100% - 280px); 
+    margin-left: 280px;
 }
 
 .BlocoTopo {
@@ -95,57 +178,15 @@ a:hover {
 }
 
 .BlocoTopo i {
-    position: absolute;
+    position: relative;
     right: 0;
     margin: 10px 30px;
     color: rgb(63, 24, 82);
     cursor: pointer;
 }
 
-.MedicoesPrincipais {
-    display: flex;
-    margin-top: 20px;
-}
-
-.MedicoesPrincipais .Segmento {
-    width: 25%;
-    margin: 10px;
-    background: #fff;
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.MedicoesPrincipais .Segmento h3 {
-    margin: 10px;
-    text-transform: capitalize;
-}
-
-.MedicoesPrincipais .Segmento p {
-    font-size: 12px;
-}
-
-.MedicoesPrincipais .Segmento button {
-    background: rgb(64, 21, 75); 
-    color: #fff;
-    padding: 7px 15px;
-    border-radius: 10px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-.MedicoesPrincipais .Segmento button:hover {
-    background: rgba(158, 46, 153, 0.856); 
-}
-
-.MedicoesPrincipais .Segmento i {
-    font-size: 22px;
-    padding: 10px;
-}
-
 .Graficos {
-    margin-top: 20px;
+    margin-top: 60px;
     text-transform: capitalize;
 }
 
@@ -214,4 +255,10 @@ a:hover {
 
 .Comment {
     color: rgb(94, 23, 90); 
+}
+
+.Medidas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
