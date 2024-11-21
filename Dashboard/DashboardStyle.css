@@ -262,3 +262,9 @@ a:hover {
     gap: 20px;
     justify-content: center;
 }
+
+.MedidasIcone {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
