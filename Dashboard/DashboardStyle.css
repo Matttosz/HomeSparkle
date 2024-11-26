@@ -11,28 +11,29 @@
 }
 
 body {
-    background: linear-gradient(to right, #ac71be, #4b0082);;
+    background: linear-gradient(to right, #ac71be, #42096b);
 }
 
 .Container {
     display: flex;
 }
 
+/* Sidebar */
 nav {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; 
+    height: 100vh;
     background: #fff;
     width: 280px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .Logo {
     text-align: center;
     display: flex;
-    margin: 10px 0 0 10px;
+    margin: 10px;
 }
 
 .Logo img {
@@ -50,11 +51,17 @@ nav {
 
 a {
     position: relative;
-    color: black; 
+    color: black;
     font-size: 14px;
     display: table;
-    width: 280px;
+    width: 270px;
     padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #eee;
+    color: #771777;
 }
 
 nav .fas {
@@ -64,8 +71,54 @@ nav .fas {
     top: 14px;
     font-size: 20px;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
+nav a:hover .fas {
+    color: #771777;
+}
+
+.Navegacao {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover .Navegacao {
+    color: #771777;
+}
+
+.Destaque a {
+    background: #eee;
+    color: #771777;
+}
+
+.Destaque .fas {
+    color: #771777;
+}
+
+.Destaque .Navegacao {
+    color: #771777;
+}
+
+.BotaoSair {
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* Conteudo Principal */
+.BlocoPrincipal {
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px;
+    width: 100%;
+    margin-left: 280px;
+    justify-content: space-between;
+}
+
+/* Medidor de Energia */
 .MedidorEnergia {
     margin-top: 20px;
     background: white;
@@ -75,112 +128,43 @@ nav .fas {
     text-align: center;
 }
 
-nav a {
-    position: relative;
-    color: black; 
-    font-size: 14px;
-    display: table;
-    width: 280px;
-    padding: 10px;
-    transition: all 0.3s ease; 
-}
-
-nav a:hover {
-    background: #eee; 
-    color: #771777; 
-}
-
-nav .fas {
-    position: relative;
-    width: 70px;
-    height: 40px;
-    top: 14px;
-    font-size: 20px;
-    text-align: center;
-    transition: color 0.3s ease; 
-}
-
-nav a:hover .fas {
-    color: #771777; 
-}
-
-.Navegacao {
-    position: relative;
-    top: 12px;
-    margin-left: 10px;
-    transition: color 0.3s ease; 
-}
-
-nav a:hover .Navegacao {
-    color: #771777;
-}
-
-.Destaque a {
-    background: #eee; 
-    color: #771777; 
-}
-
-.Destaque .fas {
-    color: #771777; 
-}
-
-.Destaque .Navegacao {
-    color: #771777; 
-}
-
 .MedidorEnergia h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
 .MedidorEnergia canvas {
-    margin: 20px;
-    display: inline-block;
+    display: flexbox;
+    margin: auto; 
 }
 
 .MedidorEnergia pre {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.MedidorEnergia span {
-    font-weight: bold;
-}
-
-.Navegacao {
-    position: relative;
-    top: 12px;
-    margin-left: 10px;
-}
-
-a:hover {
-    background: #eee; 
-}
-
-.BotaoSair {
-    position: absolute;
-    bottom: 0;
-}
-
-.BlocoPrincipal {
-    padding: 20px;
-    width: calc(100% - 280px); 
-    margin-left: 280px;
-}
-
-.BlocoTopo {
-    display: flex;
-    width: 100%;
-}
-
-.BlocoTopo i {
-    position: relative;
-    right: 0;
-    margin: 10px 30px;
-    color: rgb(63, 24, 82);
+    font-size: 18px;
+    margin: 10px;
     cursor: pointer;
 }
 
+/* Estilos Responsivos  */
+@media (max-width: 768px) {
+    .MedidorEnergia h1 {
+        font-size: 20px;
+    }
+
+    .Medidas {
+        flex-direction: column;
+    }
+
+    .Medida {
+        font-size: 18px;
+    }
+
+    .MedidasIcone {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Gráficos */
 .Graficos {
     margin-top: 60px;
     text-transform: capitalize;
@@ -208,7 +192,7 @@ a:hover {
 }
 
 .SegmentoLevantamento ul .Ativo {
-    color: #000; 
+    color: #000;
     border-bottom: 1px solid #000;
 }
 
@@ -216,6 +200,7 @@ a:hover {
     display: flex;
 }
 
+/* Sessão */
 .Sessao {
     width: 33%;
     padding: 10px;
@@ -231,7 +216,7 @@ a:hover {
 }
 
 .Sessao button {
-    background: #000; 
+    background: #000;
     color: #fff;
     padding: 7px 10px;
     border-radius: 10px;
@@ -240,7 +225,7 @@ a:hover {
 }
 
 .Sessao button:hover {
-    background: rgba(0, 0, 0, 0.842); 
+    background: rgba(0, 0, 0, 0.842);
 }
 
 .Sessao i {
@@ -250,9 +235,11 @@ a:hover {
 }
 
 .Comment {
-    color: rgb(94, 23, 90); 
+    color: rgb(94, 23, 90);
 }
 
+
+/* Medidas */
 .Medidas {
     display: flex;
     gap: 20px;
@@ -260,11 +247,13 @@ a:hover {
 }
 
 .MedidasIcone {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
 }
 
+
+/* PopUps*/
 .Popup {
     display: none;
     position: fixed;
@@ -276,7 +265,8 @@ a:hover {
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1000;
-    animation: fadeIn 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
 }
 
 .PopupTexto {
@@ -290,13 +280,8 @@ a:hover {
     cursor: pointer;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+.Popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
