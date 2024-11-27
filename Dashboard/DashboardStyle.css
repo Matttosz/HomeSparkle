@@ -30,19 +30,19 @@ nav {
     z-index: 1000;
 }
 
-.Logo {
+.LogoProject {
     text-align: center;
     display: flex;
     margin: 10px;
 }
 
-.Logo img {
+.LogoProject img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-.Logo span {
+.LogoProject span {
     font-weight: bold;
     padding-left: 16px;
     font-size: 18px;
@@ -78,14 +78,14 @@ nav a:hover .fas {
     color: #771777;
 }
 
-.Navegacao {
+.Navegation {
     position: relative;
     top: 12px;
     margin-left: 10px;
     transition: color 0.3s ease;
 }
 
-nav a:hover .Navegacao {
+nav a:hover .Navegation {
     color: #771777;
 }
 
@@ -98,18 +98,18 @@ nav a:hover .Navegacao {
     color: #771777;
 }
 
-.Destaque .Navegacao {
+.Destaque .Navegation {
     color: #771777;
 }
 
-.BotaoSair {
+.OutButton {
     position: absolute;
     bottom: 0;
 }
 
 
 /* Conteudo Principal */
-.BlocoPrincipal {
+.PrincipalCard {
     display: flex; 
     flex-direction: column; 
     padding: 20px;
@@ -119,7 +119,7 @@ nav a:hover .Navegacao {
 }
 
 /* Medidor de Energia */
-.MedidorEnergia {
+.Gauge {
     margin-top: 20px;
     background: white;
     padding: 10px;
@@ -128,17 +128,17 @@ nav a:hover .Navegacao {
     text-align: center;
 }
 
-.MedidorEnergia h1 {
+.Gauge h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.MedidorEnergia canvas {
+.Gauge canvas {
     display: flexbox;
     margin: auto; 
 }
 
-.MedidorEnergia pre {
+.Gauge pre {
     font-size: 18px;
     margin: 10px;
     cursor: pointer;
@@ -146,11 +146,11 @@ nav a:hover .Navegacao {
 
 /* Estilos Responsivos  */
 @media (max-width: 768px) {
-    .MedidorEnergia h1 {
+    .Gauge h1 {
         font-size: 20px;
     }
 
-    .Medidas {
+    .Statistics {
         flex-direction: column;
     }
 
@@ -158,95 +158,20 @@ nav a:hover .Navegacao {
         font-size: 18px;
     }
 
-    .MedidasIcone {
+    .StatisticsIcon {
         width: 20px;
         height: 20px;
     }
 }
 
-/* Gráficos */
-.Graficos {
-    margin-top: 60px;
-    text-transform: capitalize;
-}
-
-.SegmentoLevantamento {
-    width: 100%;
-    height: 300px;
-    padding: 10px 10px 30px 10px;
-    margin-top: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.SegmentoLevantamento ul {
-    list-style: none;
-    display: flex;
-}
-
-.SegmentoLevantamento ul li {
-    margin: 10px;
-    color: gray;
-    cursor: pointer;
-}
-
-.SegmentoLevantamento ul .Ativo {
-    color: #000;
-    border-bottom: 1px solid #000;
-}
-
-.SegmentoLevantamento .Levantamento {
-    display: flex;
-}
-
-/* Sessão */
-.Sessao {
-    width: 33%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    background: rgb(235, 233, 233);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.Sessao p {
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.Sessao button {
-    background: #000;
-    color: #fff;
-    padding: 7px 10px;
-    border-radius: 10px;
-    margin-top: 3rem;
-    cursor: pointer;
-}
-
-.Sessao button:hover {
-    background: rgba(0, 0, 0, 0.842);
-}
-
-.Sessao i {
-    font-size: 7rem;
-    float: right;
-    margin: -20px 20px 20px 0;
-}
-
-.Comment {
-    color: rgb(94, 23, 90);
-}
-
-
-/* Medidas */
-.Medidas {
+/* Statistics */
+.Statistics {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
-.MedidasIcone {
+.StatisticsIcon {
     width: 20px;
     height: 20px;
     margin-right: 8px;
@@ -254,7 +179,7 @@ nav a:hover .Navegacao {
 
 
 /* PopUps*/
-.Popup {
+.PopupCard {
     display: none;
     position: fixed;
     left: 50%;
@@ -269,19 +194,117 @@ nav a:hover .Navegacao {
     opacity: 0;
 }
 
-.PopupTexto {
+.PopupText {
     padding: 40px;
 }
 
-.Popup .Close {
+.PopupCard .Close {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
 
-.Popup.show {
+.PopupCard.show {
     display: block;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Sidebar */
+nav a#TipssNav {
+    position: relative;
+    color: black;
+    font-size: 14px;
+    display: table;
+    width: 270px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a#TipssNav:hover {
+    background: #eee;
+    color: #771777;
+}
+
+
+
+/* Seção de Dicas */
+.Tips {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.Tips h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.TipsItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.TipsIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.TipsItem p {
+    font-size: 18px;
+    text-align: left;
+}
+
+
+
+/* Popups */
+.PopupForm {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.PopupForm.show {
+    display: block; 
+}
+
+.PopupFormText {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 25px; 
+    border: 1px solid #420847; 
+    width: 80%; 
+    border-radius: 10px;
+}
+
+.Close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.Close:hover {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+.Close:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
 }

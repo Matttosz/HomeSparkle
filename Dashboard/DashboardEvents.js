@@ -1,14 +1,20 @@
-document.querySelectorAll('.MedidasIcone').forEach((icon, index) => {
-    icon.addEventListener('click', () => {
-        const PopupId = ['PopupPotencia', 'PopupCorrente', 'PopupConsumo'][index];
-        showPopup(PopupId);
+function ShowPopup(PopupId) {
+    // Esconder os pop-ups
+    const Popups = document.querySelectorAll('.Popup');
+    Popups.forEach(Popup => {
+        Popup.classList.remove('show');
     });
-});
 
-function showPopup(PopupId) {
-    document.getElementById(PopupId).style.display = 'block';
+    // Mostrar o pop-up selecionado
+    const Popup = document.getElementById(PopupId);
+    if (Popup) {
+        Popup.classList.add('show');
+    }
 }
 
-function hidePopup(PopupId) {
-    document.getElementById(PopupId).style.display = 'none';
+function HidePopup(PopupId) {
+    const Popup = document.getElementById(PopupId);
+    if (Popup) {
+        Popup.classList.remove('show'); // Oculta o pop-up
+    }
 }

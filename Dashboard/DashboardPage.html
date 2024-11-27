@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="DashboardStyle.css">
-    <title>Página Principal - Dashboard</title>
     <link rel="icon" href="/Landing/img/LogoHomeSparkle.png" type="image/png">
+    <title>Página Principal - Dashboard</title>
 </head>
+
 <body>
     <div class="Container">
         <nav>
             <ul>
-                <li><a href="/Landing/LandingPage.html" class="Logo">
-                    <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
-                    <span class="Navegacao">HomeSparkle</span>
-                </a></li>
+                <li><a href="/Landing/LandingPage.html" class="LogoProject">
+                        <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
+                        <span class="Navegation">HomeSparkle</span>
+                    </a></li>
                 <li class="Destaque"><a href="#">
-                    <i class="fas fa-home"></i>
-                    <span class="Navegacao">Home</span>
-                </a></li>
+                        <i class="fas fa-home"></i>
+                        <span class="Navegation">Home</span>
+                    </a></li>
                 <li><a href="#">
-                    <i class="fas fa-user"></i>
-                    <span class="Navegacao">Perfil do Usuário</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="fas fa-chart-bar"></i>
-                    <span class="Navegacao">Enel</span>
-                </a></li>
+                        <i class="fas fa-user"></i>
+                        <span class="Navegation">Perfil do Usuário</span>
+                    </a></li>
                 <li><a href="https://github.com/Matttosz/HomeSparkle">
-                    <i class="fas fa-brands fa-github"></i>
-                    <span class="Navegacao">Sobre nós</span>
-                </a></li>
-                <li><a href="https://forms.gle/ryGTrXdjMtnioH6w9">
-                    <i class="fas fa-question-circle"></i>
-                    <span class="Navegacao">Questionamentos</span>
-                </a></li>
-                <li><a href="/Landing/LandingPage.html" class="BotaoSair">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span class="Navegacao">Sair</span>
-                </a></li>
+                        <i class="fas fa-brands fa-github"></i>
+                        <span class="Navegation">Sobre nós</span>
+                    </a></li>
+                <li><a href="#" onclick="ShowPopup('FormContainer')">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="Navegation">Questionamentos</span>
+                    </a></li>
+                <li><a href="/Landing/LandingPage.html" class="OutButton">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="Navegation">Sair</span>
+                    </a></li>
             </ul>
         </nav>
 
@@ -68,58 +66,86 @@
             s[0]&&""!=s[0]&&(x.from=s[0]);s[1]&&""!=s[1]&&(x.to=s[1]);s[2]&&""!=s[2]&&(x.color=s[2]);e.highlights.push(x)}break;case "animation":d[1]&&(e.animation||(e.animation={}),"fn"==d[1]&&/^\s*function\s*\(/.test(g)&&(g=eval("("+g+")")),e.animation[d[1]]=g);break;default:d=b(d);if("onready"==d)continue;if("majorTicks"==d)g=g.split(/\s+/);else if("strokeTicks"==d||"glow"==d)g="true"==g?!0:!1;else if("valueFormat"==d)if(g=g.split("."),2==g.length)g={"int":parseInt(g[0],10),dec:parseInt(g[1],10)};else continue;
             e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.getAttribute("data-value")));k.getAttribute("data-onready")&&(e.onready=function(){eval(this.config.renderTo.getAttribute("data-onready"))});e.draw()}});window.Gauge=Gauge;
             <!-- Gauge Code Ends -->
-            </script>        
+            </script>  
 
-        <section class="BlocoPrincipal">
-            <section class="MedidorEnergia">
-                <h1>Medidor de gasto de Energia em tempo real</h1>
-                <canvas id="an_gauge_1" data-major-ticks="0 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500" data-type="canv-gauge" data-min-value="0" data-max-value="5500" data-onready="setInterval( function() { Gauge.Collection.get('an_gauge_1').setValue(data_val);}, 1000);"></canvas>
-                <canvas id="an_gauge_2" width="400px" height="200px " data-type="canv-gauge"></canvas>
-                <div class="Medidas">
-                    <pre><img src="/ImagesAssets/poder.png" alt="Potência" class="MedidasIcone"> Potência(W): <span id="input3">...</span></pre>
-                    <pre><img src="/ImagesAssets/controle-de-energia.png" alt="Corrente" class="MedidasIcone"> Corrente(A): <span id="input4">...</span></pre>
-                    <pre><img src="/ImagesAssets/moedas.png" alt="Consumo" class="MedidasIcone"> Consumo(R$): <span id="input5">...</span></pre>
+        <section class="PrincipalCard">
+            <section class="Gauge">
+                <h1>Medidor de gasto de Energia</h1>
+                <canvas id="an_gauge_1" data-major-ticks="0 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500"
+                    data-type="canv-gauge" data-min-value="0" data-max-value="5500"
+                    data-onready="setInterval( function() { Gauge.Collection.get('an_gauge_1').setValue(data_val);}, 1000);"></canvas>
+                <canvas id="an_gauge_2" width="200px" height="200px" data-type="canv-gauge"></canvas>
+                <div class="Statistics">
+                    <pre><img src="/ImagesAssets/poder.png" alt="Power" class="StatisticsIcon" onclick="ShowPopup('PopupPower')"> Potência(W): <span id="input3">...</span></pre>
+                    <pre><img src="/ImagesAssets/controle-de-energia.png" alt="Current" class="StatisticsIcon" onclick="ShowPopup('PopupCurrent')"> Corrente(A): <span id="input4">...</span></pre>
+                    <pre><img src="/ImagesAssets/moedas.png" alt="Spent" class="StatisticsIcon" onclick="ShowPopup('PopupSpent')"> Consumo(R$): <span id="input5">...</span></pre>
                 </div>
             </section>
+            
 
-            <section class="Graficos">
-                <h1>Meus levantamentos</h1>
-                <div class="SegmentoLevantamento">
-                    <ul>
-                        <li class="Ativo">Em análise</li>
-                        <li>Gráficos passados</li>
-                        <li>Dicas passadas</li>
-                        <li>Levantamentos anteriores</li>
-                    </ul>
-                    <div class="Levantamento">
-                        <div class="Sessao">
-                            <h3>Compare</h3>
-                            <p>Confira os levantamentos</p>
-                            <button>Visualizar</button>
-                            <i class="fa-solid fa-comment Comment"></i>
-                        </div>
-                    </div>
+            <section class="Tips" id="TipsSection">
+                <h1>Dicas de Economia e Consumo</h1>
+                <div class="TipsItem">
+                    <img src="/Landing/img/energia-eletrica.png" alt="Economize Energia" class="TipsIcon">
+                    <p>No caso de desktop, sempre que ocorrer uma pausa no trabalho, desligue o monitor e, se possível, configure-o para desligar automaticamente após um período sem utilização.</p>
+                </div>
+                <div class="TipsItem">
+                    <img src="/Landing/img/energia-solar.png" alt="Use Lâmpadas LED" class="TipsIcon">
+                    <p>Troque as lâmpadas halógenas ou fluorescentes por lâmpadas de LED, mais econômicas. Exemplo: ao substituir uma lâmpada incandescente de 100WW por uma fluorescente de 32W você economiza cerca de 60% de energia</p>
+                </div>
+                <div class="TipsItem">
+                    <img src="/Landing/img/lampada.png" alt="Use o Chuveiro com Moderação" class="TipsIcon">
+                    <p>O aparelho pode representar, em média, até 15% do valor da sua conta. Por isso, não deixe ela ligada quando não houver ninguém assistindo</p>
                 </div>
             </section>
         </section>
     </div>
 
-    <div id="PopupPotencia" class="Popup">
-        <div class="PopupTexto">
-            <span class="Close" onclick="hidePopup('PopupPotencia')">&times;</span>
-            <p>Potência é a grandeza que determina a quantidade de energia concedida por uma fonte a cada unidade de tempo. Em outros termos, potência é a rapidez com a qual uma certa quantidade de energia é transformada ou é a rapidez com que o trabalho é realizado.</p>
+    <div id="PopupPower" class="PopupCard">
+        <div class="PopupText">
+            <span class="Close" onclick="HidePopup('PopupPower')">&times;</span>
+            <p>
+                Potência é a grandeza que determina a quantidade de energia concedida por uma fonte a cada unidade de
+                tempo. Em outros termos, potência é a rapidez com a qual uma certa quantidade de energia é transformada
+                ou é a rapidez com que o trabalho é realizado.
+            </p>
         </div>
     </div>
-    <div id="PopupCorrente" class="Popup">
-        <div class="PopupTexto">
-            <span class="Close" onclick="hidePopup('PopupCorrente')">&times;</span>
-            <p>Corrente elétrica é o fluxo ordenado de partículas portadoras de carga elétrica ou o deslocamento de cargas dentro de um condutor, quando existe uma diferença de potencial elétrico entre as extremidades. Tal deslocamento procura restabelecer o equilíbrio desfeito pela ação de um campo elétrico ou outros meios.</p>
+    <div id="PopupCurrent" class="PopupCard">
+        <div class="PopupText">
+            <span class="Close" onclick="HidePopup('PopupCurrent')">&times;</span>
+            <p>
+                Corrente elétrica é o fluxo ordenado de partículas portadoras de carga elétrica ou o deslocamento de
+                cargas dentro de um condutor, quando existe uma diferença de potencial elétrico entre as extremidades.
+                Tal deslocamento procura restabelecer o equilíbrio desfeito pela ação de um campo elétrico ou outros
+                meios.
+            </p>
         </div>
     </div>
-    <div id="PopupConsumo" class="Popup">
-        <div class="PopupTexto">
-            <span class="Close" onclick="hidePopup('PopupConsumo')">&times;</span>
-            <p>Consumo de energia é a quantidade de energia elétrica que é utilizada em um determinado período de tempo. O consumo de energia depende de dois fatores: a potência do equipamento e o tempo de uso.</p>
+    <div id="PopupSpent" class="PopupCard">
+        <div class="PopupText">
+            <span class="Close" onclick="HidePopup('PopupSpent')">&times;</span>
+            <p>
+                Consumo de energia é a quantidade de energia elétrica que é utilizada em um determinado período de
+                tempo.
+                O consumo de energia depende de dois fatores: a potência do equipamento e o tempo de uso.
+            </p>
+        </div>
+    </div>
+
+    <div id="FormContainer" class="PopupForm">
+        <div class="PopupFormText">
+            <span class="Close" onclick="HidePopup('FormContainer')">&times;</span>
+            <h2>Formulário de Questionamentos</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="hmsparkle@gmail.com" readonly><br><br>
+                <label for="mensagem">Deixe aqui sua sugestão ou questionamento em relação a medição:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </div>
 
