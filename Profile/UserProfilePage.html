@@ -4,40 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="UserPageStyle.css">
+    <link rel="icon" href="/Landing/img/LogoHomeSparkle.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Perfil do Usuário</h1>
-        </header>
-        <div class="profile-picture">
-            <img id="profile-img" src="" alt="Foto de perfil">
+    <div class="Container">
+        <!-- Menu Lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="/HomeSparkle-main/Landing/LandingPage.html" class="LogoProject">
+                        <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
+                        <span class="Navegation">HomeSparkle</span>
+                    </a></li>
+                <li class="Destaque"><a href="/HomeSparkle-main/Dashboard/DashboardPage.html">
+                        <i class="fas fa-home"></i>
+                        <span class="Navegation">Home</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-user"></i>
+                        <span class="Navegation">Perfil do Usuário</span>
+                    </a></li>
+                <li><a href="https://github.com/Matttosz/HomeSparkle">
+                        <i class="fas fa-brands fa-github"></i>
+                        <span class="Navegation">Sobre nós</span>
+                    </a></li>
+                <li><a href="#" onclick="ShowPopup('FormContainer')">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="Navegation">Questionamentos</span>
+                    </a></li>
+                <li><a href="/Landing/LandingPage.html" class="OutButton">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="Navegation">Sair</span>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <div class="container">
+                <header>
+                    <h1>Perfil do Usuário</h1>
+                </header>
+                <div class="profile-picture">
+                    <img id="profile-img" src="default-profile.png" alt="Foto de perfil">
+                    <input type="file" id="upload-photo" accept="image/*">
+                </div>
+                <div class="user-info">
+                    <div class="info-item">
+                        <label for="username">Nome:</label>
+                        <input type="text" id="username" placeholder="Digite seu nome">
+                    </div>
+                    <div class="info-item">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="info-item">
+                        <label for="telephone">Telefone:</label>
+                        <input type="text" id="telephone" placeholder="Digite seu telefone">
+                    </div>
+                    <div class="info-item">
+                        <label for="address">Endereço:</label>
+                        <input type="text" id="address" placeholder="Digite seu endereço">
+                    </div>
+                </div>
+                <footer>
+                    <button id="save-button">Salvar</button>
+                    <button id="logout-button">Sair</button>
+                </footer>
+            </div>
         </div>
-        <div class="user-info">
-            <div class="info-item">
-                <label for="username">Nome:</label>
-                <span id="username"></span>
-            </div>
-            <div class="info-item">
-                <label for="email">E-mail:</label>
-                <span id="email"></span>
-            </div>
-            <div class="info-item">
-                <label for="telephone">Telefone:</label>
-                <span id="telephone"></span>
-            </div>
-            <div class="info-item">
-                <label for="address">Endereço:</label>
-                <span id="address"></span>
-            </div>
-        </div>
-        <footer>
-            <button id="logout-button">Sair</button>
-        </footer>
     </div>
 
-    
-    <script src="/HomeSparkle-main/pages/userProfile.js"></script>
+    <script src="UserDataStorage.js"></script>
 </body>
 </html>

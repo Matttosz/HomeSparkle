@@ -1,57 +1,69 @@
+// Função para salvar os dados do usuário localmente (pode ser usado com LocalStorage ou envio para servidor)
+function saveUserData() {
+    const username = document.getElementById("username").value || "Nome não informado";
+    const email = document.getElementById("email").value || "E-mail não informado";
+    const telephone = document.getElementById("telephone").value || "Telefone não informado";
+    const address = document.getElementById("address").value || "Endereço não informado";
 
-async function getUserData() {
-    try {
-        const username = prompt("Digite seu nome:");
-        const email = prompt("Digite seu e-mail:");
-        const telephone = prompt("Digite seu telefone:");
-        const address = prompt("Digite seu endereço:");
-        const profilePicture = prompt("Digite a URL da sua foto de perfil:");
+    const userData = {
+        username,
+        email,
+        telephone,
+        address,
+        profilePicture: document.getElementById("profile-img").src // Captura a URL da imagem
+    };
 
-        
-        await new Promise(resolve => setTimeout(resolve, 1500));
+    // Salvando os dados no LocalStorage (caso queira persistir os dados localmente)
+    localStorage.setItem("userData", JSON.stringify(userData));
 
-       
-        return {
-            username,
-            email,
-            telephone,
-            address,
-            profilePicture
-        };
-    } catch (error) {
-        console.error('Erro ao obter os dados do usuário:', error);
-        throw error;
+    // Confirmação para o usuário
+    alert("Dados salvos com sucesso!");
+}
+
+// Função para exibir os dados do usuário (se já estiverem salvos no LocalStorage)
+function loadUserData() {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+    if (userData) {
+        document.getElementById("username").value = userData.username;
+        document.getElementById("email").value = userData.email;
+        document.getElementById("telephone").value = userData.telephone;
+        document.getElementById("address").value = userData.address;
+        document.getElementById("profile-img").src = userData.profilePicture || "default-profile.png";
     }
 }
 
+// Função para o upload de foto
+function setupPhotoUpload() {
+    const uploadInput = document.getElementById("upload-photo");
+    const profileImg = document.getElementById("profile-img");
 
-function updateUserInfo(userData) {
-    document.getElementById('username').textContent = userData.username;
-    document.getElementById('email').textContent = userData.email;
-    document.getElementById('telephone').textContent = userData.telephone;
-    document.getElementById('address').textContent = userData.address;
+    uploadInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
 
-    const profileImg = document.getElementById('profile-img');
-    profileImg.src = userData.profilePicture;
-    profileImg.alt = `Foto de perfil de ${userData.username}`;
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profileImg.src = e.target.result;
+                alert("Foto de perfil atualizada!");
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert("Por favor, selecione uma imagem válida.");
+        }
+    });
 }
 
-
+// Função de logout
 function handleLogout() {
-    alert('Você foi desconectado.');
-    
+    localStorage.removeItem("userData");
+    alert("Você foi desconectado.");
+    window.location.href = "/Landing/LandingPage.html"; 
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    getUserData()
-        .then(userData => {
-            updateUserInfo(userData);
-        })
-        .catch(error => {
-            document.querySelector('.user-info').innerHTML = '<p>Falha ao carregar dados do usuário.</p>';
-        });
-
-    
-    document.getElementById('logout-button').addEventListener('click', handleLogout);
+document.addEventListener("DOMContentLoaded", function () {
+    loadUserData(); 
+    setupPhotoUpload(); 
+    document.getElementById("save-button").addEventListener("click", saveUserData);
+    document.getElementById("logout-button").addEventListener("click", handleLogout);
 });
