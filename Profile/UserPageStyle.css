@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
-/* Gerenciamento de layout e estilos */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +21,6 @@ body {
     width: 100%;
 }
 
-/* Menu Lateral */
 .sidebar {
     width: 250px;
     background-color: #fff;
@@ -79,7 +77,6 @@ body {
     bottom: 0;
 }
 
-/* Estilo do conteúdo principal */
 .main-content {
     margin-left: 250px;
     width: calc(100% - 250px);

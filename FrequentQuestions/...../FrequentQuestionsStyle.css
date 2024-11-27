@@ -18,7 +18,6 @@ body {
     display: flex;
 }
 
-/* Sidebar */
 nav {
     position: fixed;
     top: 0;
@@ -108,7 +107,6 @@ nav a:hover .Navegation {
 }
 
 
-/* Conteudo Principal */
 .BlocoPrincipal {
     display: flex; 
     flex-direction: column; 
@@ -118,7 +116,6 @@ nav a:hover .Navegation {
     justify-content: space-between;
 }
 
-/* Medidor de Energia */
 .MedidorEnergia {
     margin-top: 20px;
     background: white;
@@ -133,7 +130,6 @@ nav a:hover .Navegation {
     margin-bottom: 20px;
 }
 
-/* Estilos Responsivos  */
 @media (max-width: 768px) {
     .MedidorEnergia h1 {
         font-size: 20px;
@@ -153,7 +149,6 @@ nav a:hover .Navegation {
     }
 }
 
-/* Perguntas*/
 .Questions{
     margin-left: 40px;
     height: 500px;
@@ -268,7 +263,6 @@ div.panel {
     padding: 15px;
 }
 
-/* Popups */
 .PopupForm {
     display: none; 
     position: fixed; 

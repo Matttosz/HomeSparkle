@@ -1,4 +1,3 @@
-// Função para salvar os dados do usuário localmente (pode ser usado com LocalStorage ou envio para servidor)
 function saveUserData() {
     const username = document.getElementById("username").value || "Nome não informado";
     const email = document.getElementById("email").value || "E-mail não informado";
@@ -10,17 +9,14 @@ function saveUserData() {
         email,
         telephone,
         address,
-        profilePicture: document.getElementById("profile-img").src // Captura a URL da imagem
+        profilePicture: document.getElementById("profile-img").src  
     };
 
-    // Salvando os dados no LocalStorage (caso queira persistir os dados localmente)
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    // Confirmação para o usuário
     alert("Dados salvos com sucesso!");
 }
 
-// Função para exibir os dados do usuário (se já estiverem salvos no LocalStorage)
 function loadUserData() {
     const userData = JSON.parse(localStorage.getItem("userData"));
 
@@ -33,7 +29,6 @@ function loadUserData() {
     }
 }
 
-// Função para o upload de foto
 function setupPhotoUpload() {
     const uploadInput = document.getElementById("upload-photo");
     const profileImg = document.getElementById("profile-img");
@@ -54,7 +49,6 @@ function setupPhotoUpload() {
     });
 }
 
-// Função de logout
 function handleLogout() {
     localStorage.removeItem("userData");
     alert("Você foi desconectado.");

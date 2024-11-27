@@ -18,7 +18,7 @@ body {
     display: flex;
 }
 
-/* Sidebar */
+
 nav {
     position: fixed;
     top: 0;
@@ -108,7 +108,7 @@ nav a:hover .Navegation {
 }
 
 
-/* Conteudo Principal */
+
 .PrincipalCard {
     display: flex; 
     flex-direction: column; 
@@ -118,7 +118,7 @@ nav a:hover .Navegation {
     justify-content: space-between;
 }
 
-/* Medidor de Energia */
+
 .Gauge {
     margin-top: 20px;
     background: white;
@@ -144,7 +144,7 @@ nav a:hover .Navegation {
     cursor: pointer;
 }
 
-/* Estilos Responsivos  */
+
 @media (max-width: 768px) {
     .Gauge h1 {
         font-size: 20px;
@@ -164,7 +164,7 @@ nav a:hover .Navegation {
     }
 }
 
-/* Statistics */
+
 .Statistics {
     display: flex;
     gap: 20px;
@@ -178,7 +178,7 @@ nav a:hover .Navegation {
 }
 
 
-/* PopUps*/
+
 .PopupCard {
     display: none;
     position: fixed;
@@ -212,7 +212,7 @@ nav a:hover .Navegation {
 }
 
 
-/* Sidebar */
+
 nav a#TipssNav {
     position: relative;
     color: black;
@@ -230,7 +230,7 @@ nav a#TipssNav:hover {
 
 
 
-/* Seção de Dicas */
+
 .Tips {
     margin-top: 20px;
     background: white;
@@ -264,7 +264,6 @@ nav a#TipssNav:hover {
 
 
 
-/* Popups */
 .PopupForm {
     display: none; 
     position: fixed; 

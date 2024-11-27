@@ -74,7 +74,7 @@
     const voltage = 220; 
     let ValuePower = 1500; 
     let ValueFlow = ValuePower / voltage; 
-    let totalCost = 0; // Variável para acumular o custo total
+    let totalCost = 0; 
 
     function simulatePowerUsage() {
         const basePower = 1500; 
@@ -90,7 +90,7 @@
     function DadosVindosDoArduino() {
         simulatePowerUsage();
         const currentCost = calculateCost(ValuePower);
-        totalCost += currentCost / 3600; // Atualiza o custo total considerando o intervalo de 1 segundo
+        totalCost += currentCost / 3600;
         document.getElementById("Potencia").innerHTML = ValuePower.toFixed(2) + " W";
         document.getElementById("Corrente").innerHTML = ValueFlow.toFixed(3) + " A";
         document.getElementById("Consumo").innerHTML = "R$ " + totalCost.toFixed(2);
@@ -102,13 +102,11 @@
         return powerInKiloWatts * taxes; 
     }
 
-    // Atualiza os valores a cada segundo
     function GetArduinoInputs() {
         DadosVindosDoArduino();
-        setTimeout(GetArduinoInputs, 1000); // Reexecuta após 1 segundo
+        setTimeout(GetArduinoInputs, 1000);
     }
 
-    // Executa ao carregar a página
     window.onload = function () {
         GetArduinoInputs();
     };
