@@ -1,59 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="LoginPageStyle.css">
-    <link rel="icon" href="/Landing/img/LogoHomeSparkle.png" type="image/png">
-    <title>Login HomeSparkle</title>
+    <title>HomeSparkle - Sistema de Medição de Energia</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="LandingPageStyle.css">
+    <link rel="icon" href="img/LogoHomeSparkle.png" type="image/png">
 </head>
 <body>
-    <div class="Container" id="Container">
-        <div class="FormContainer Cadastro">
-            <form action="/Dashboard/DashboardPage.html">
-                <h1>Criar conta</h1>
-                <div class="Icones">
-                    <a href="#" class="Icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="Icon"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-                <span>ou use seu e-mail para o registro</span>
-                <input type="text" name="UserName" placeholder="Qual seu nome?">
-                <input type="email"name="UserEmail" placeholder="Nos diga seu e-mail">
-                <input type="password" name="UserPassword"placeholder="Digite sua senha">
-                <input type="password" name="PasswordTest"placeholder="Confirme sua Senha">
-                <button>Criar</button>
-                </form>
-        </div>
-        <div class="FormContainer Login">
-            <form action="/Dashboard/DashboardPage.html">
-                <h1>Entre</h1>
-                <div class="Icones">
-                    <a href="#" class="Icone"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="Icone"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-                <span>ou use seu e-mail</span>
-                <input type="email" name="UserEmail" placeholder="E-mail">
-                <input type="password" name="UserPassword" placeholder="Senha">
-                <a href="#">Esqueceu sua senha?</a>
-                <button>Entrar</button>
-            </form>
-        </div>
-        <div class="AlternarContainer">
-            <div class="Alternar">
-                <div class="AlternarPainel AlternarEsquerda">
-                    <h1><img src="/Landing/img/LogoHomeSparkle.png" alt="Lâmpada" class="Logo"> HomeSparkle</h1>
-                    <p>Entre com seu e-mail pessoal para acessar as funcionalidades</p>
-                    <button class="Ocultar" id="Login">Entrar</button>
-                </div>
-                <div class="AlternarPainel AlternarDireita">
-                    <h1><img src="/Landing/img/LogoHomeSparkle.png" alt="Lâmpada" class="Logo"> HomeSparkle</h1>
-                    <p>Registre-se com seu e-mail para ter acesso às funcionalidades</p>
-                    <button class="Ocultar" id="Registro">Registre-se</button>
+    <div class="Container">
+        <nav>
+            <ul>
+                <li><a href="https://github.com/Matttosz/HomeSparkle.git">Conheça Nosso Git</a></li>
+                <li><a href="/Login/LoginPage.html">Entrar</a></li>
+            </ul>
+        </nav>
+
+        <div class="PrincipalCard">
+            <div class="PrincipalText">
+                <img src="img/LogoHomeSparkle.png" alt="Lâmpada" class="Lampada">
+                <div class="PrincipalContent">
+                    <h1>HomeSparkle</h1>
+                    <p>O HomeSparkle é um sistema inovador de medição de energia, projetado para ajudar os usuários a
+                        monitorar e otimizar o consumo energético de suas residências.</p>
+                    <button><a class="RegisterButton" href="/Login/LoginPage.html">Cadastre-se</a></button>
                 </div>
             </div>
         </div>
+
+        <div class="MiddleCard">
+            <div class="Cards">
+                <div class="Images">
+                    <img src="img/energia-eletrica.png" alt="">
+                </div>
+                <div class="CardTexts">
+                    <h3>Medição rápida</h3>
+                    <p>Criteriosa e veloz.</p>
+                </div>
+            </div>
+            <div class="Cards">
+                <div class="Images">
+                    <img src="img/lampada.png" alt="">
+                </div>
+                <div class="CardTexts">
+                    <h3>Seguro</h3>
+                    <p>Prático e eficiente.</p>
+                </div>
+            </div>
+            <div class="Cards">
+                <div class="Images">
+                    <img src="img/energia-solar.png" alt="">
+                </div>
+                <div class="CardTexts">
+                    <h3>Personalizado</h3>
+                    <p>Se adequa a cada caso.</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="SecondaryCard">
+            <h2>O que o sistema faz?</h2>
+            <div class="GroupingsCard">
+                <div class="Grouping">
+                    <h3>Medição em Tempo Real</h3>
+                    <p>Nosso sistema oferece medições de energia em tempo real, permitindo que os usuários acompanhem
+                        seu consumo a qualquer momento.</p>
+                </div>
+                <div class="Grouping">
+                    <h3>Análises Detalhadas</h3>
+                    <p>Fornecemos análises detalhadas do consumo energético, ajudando os usuários a identificar padrões
+                        e oportunidades de economia.</p>
+                </div>
+                <div class="Grouping">
+                    <h3>Dicas de Economia</h3>
+                    <p>Com base nos dados coletados, oferecemos dicas personalizadas para ajudar os usuários a reduzir o
+                        consumo de energia e economizar dinheiro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="TertiaryCard">
+            <h2>Criadores</h2>
+            <div class="GroupingsCard">
+                <div class="Grouping">
+                    <img src="/Landing/img/joao.jpeg" alt="João Vitor da Silva">
+                    <h3>João Vitor da Silva</h3>
+                    <p>João Vitor é o desenvolvedor responsável pela criação e manutenção do design CSS do HomeSparkle. Ele garantiu que a interface fosse intuitiva e visualmente atraente, focando na experiência do usuário.</p>
+                </div>
+                <div class="Grouping">
+                    <img src="/Landing/img/murilo.png" alt="Murilo Augusto de Mattos Marciano">
+                    <h3>Murilo Augusto de Mattos Marciano</h3>
+                    <p>Murilo Augusto é o desenvolvedor back-end do projeto, especializado na implementação de algoritmos em PHP. Ele criou as funcionalidades principais do sistema, garantindo que as medições de energia fossem precisas e eficientes.</p>
+                </div>
+                <div class="Grouping">
+                    <img src="/Landing/img/mell.jpeg" alt="Mell Cristiny Alves da Costa">
+                    <h3>Mell Cristiny Alves da Costa</h3>
+                    <p>Mell Cristiny é responsável pela curadoria da qualidade da experiência do usuário e pelo design do dashboard. Ela trabalhou no refinamento do CSS e na criação de um dashboard intuitivo, melhorando a interação do usuário com o sistema.</p>
+                </div>
+            </div>            
     </div>
-    <script src="LoginPageEvents.js"></script>
+    <script src="LandingPageEvents.js"></script>
 </body>
 </html>
