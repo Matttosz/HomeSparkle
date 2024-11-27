@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="mrsrgustavo4.css">
+    
+    <title>Perguntas Frequentes</title>
+    <link rel="icon" href="/Landing/img/LogoHomeSparkle.png" type="image/png">
+</head>
+<body>
+    <div class="Container">
+        <nav>
+            <ul>
+                <li><a href="/Landing/LandingPage.html" class="Logo">
+                    <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
+                    <span class="Navegacao">HomeSparkle</span>
+                </a></li>
+                <li class="Destaque"><a href="#">
+                    <i class="fas fa-home"></i>
+                    <span class="Navegacao">Home</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-user"></i>
+                    <span class="Navegacao">Perfil do Usuário</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="Navegacao">Enel</span>
+                </a></li>
+                <li><a href="https://github.com/Matttosz/HomeSparkle">
+                    <i class="fas fa-brands fa-github"></i>
+                    <span class="Navegacao">Sobre nós</span>
+                </a></li>
+                <li><a href="PerguntasFrequentes.html">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="Navegacao">Questionamentos</span>
+                </a></li>
+
+                <li><a href="PerguntasFrequentes.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span class="Navegacao">Perguntas</span>
+                </a></li>
+            
+                <li><a href="/Landing/LandingPage.html" class="BotaoSair">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="Navegacao">Sair</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        
+
+        <section class="BlocoPrincipal">
+            <section class="MedidorEnergia">
+                <h1>Perguntas Frequentes</h1>
+                
+                
+                </div>
+            </section>
+
+          <section class="Perguntas">
+            <div class="FaqContainer">
+                <div class="FaqItem">
+                  <div class="FaqQuestion">O Murilo da oq?</div>
+                  <div class="FaqAnswer">
+                    O butico
+                  </div>
+                </div>
+                <div class="FaqItem">
+                  <div class="FaqQuestion">O murilo mora no</div>
+                  <div class="FaqAnswer">
+                   Penis
+                  </div>
+                </div>
+                <div class="FaqItem">
+                  <div class="FaqQuestion">Murilao faz oque</div>
+                  <div class="FaqAnswer">
+                   rebola slow para os crias
+                  </div>
+                </div>
+                <div class="FaqItem">
+                    <div class="FaqQuestion">Murilao faz oque</div>
+                    <div class="FaqAnswer">
+                     rebola slow para os crias
+                    </div>
+                  </div>
+                  <div class="FaqItem">
+                    <div class="FaqQuestion">Murilao faz oque</div>
+                    <div class="FaqAnswer">
+                     rebola slow para os crias
+                    </div>
+                  </div>
+
+                  <div class="FaqItem">
+                    <div class="FaqQuestion">Murilao faz oque</div>
+                    <div class="FaqAnswer">
+                     rebola slow para os crias
+                    </div>
+                  </div>
+
+              </div>
+            
+             
+
+          </section>
+    </div>
+
+    <div id="PopupPotencia" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupPotencia')">&times;</span>
+            <p>Potência é a grandeza que determina a quantidade de energia concedida por uma fonte a cada unidade de tempo. Em outros termos, potência é a rapidez com a qual uma certa quantidade de energia é transformada ou é a rapidez com que o trabalho é realizado.</p>
+        </div>
+    </div>
+    <div id="PopupCorrente" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupCorrente')">&times;</span>
+            <p>Corrente elétrica é o fluxo ordenado de partículas portadoras de carga elétrica ou o deslocamento de cargas dentro de um condutor, quando existe uma diferença de potencial elétrico entre as extremidades. Tal deslocamento procura restabelecer o equilíbrio desfeito pela ação de um campo elétrico ou outros meios.</p>
+        </div>
+    </div>
+    <div id="PopupConsumo" class="Popup">
+        <div class="PopupTexto">
+            <span class="Close" onclick="hidePopup('PopupConsumo')">&times;</span>
+            <p>Consumo de energia é a quantidade de energia elétrica que é utilizada em um determinado período de tempo. O consumo de energia depende de dois fatores: a potência do equipamento e o tempo de uso.</p>
+        </div>
+    </div>
+    <script>
+        const FaqItems = document.querySelectorAll('.FaqItem');
+    
+        FaqItems.forEach(Item => {
+          Item.querySelector('.FaqQuestion').addEventListener('click', () => {
+            Item.classList.toggle('Active');
+          });
+        });
+    </script>
+
+    <script src="DashboardEvents.js"></script>
+</body>
+</html>
