@@ -30,19 +30,19 @@ nav {
     z-index: 1000;
 }
 
-.Logo {
+.LogoProject {
     text-align: center;
     display: flex;
     margin: 10px;
 }
 
-.Logo img {
+.LogoProject img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-.Logo span {
+.LogoProject span {
     font-weight: bold;
     padding-left: 16px;
     font-size: 18px;
@@ -78,18 +78,18 @@ nav a:hover .fas {
     color: #771777;
 }
 
-.Navegacao {
+.Navegation {
     position: relative;
     top: 12px;
     margin-left: 10px;
     transition: color 0.3s ease;
 }
 
-nav a:hover .Navegacao {
+nav a:hover .Navegation {
     color: #771777;
 }
 
-.Highlight a {
+.Destaque a {
     background: #eee;
     color: #771777;
 }
@@ -98,11 +98,11 @@ nav a:hover .Navegacao {
     color: #771777;
 }
 
-.Destaque .Navegacao {
+.Destaque .Navegation {
     color: #771777;
 }
 
-.BotaoSair {
+.OutButton {
     position: absolute;
     bottom: 0;
 }
@@ -133,17 +133,6 @@ nav a:hover .Navegacao {
     margin-bottom: 20px;
 }
 
-.MedidorEnergia canvas {
-    display: flexbox;
-    margin: auto; 
-}
-
-.MedidorEnergia pre {
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
-}
-
 /* Estilos Responsivos  */
 @media (max-width: 768px) {
     .MedidorEnergia h1 {
@@ -164,98 +153,8 @@ nav a:hover .Navegacao {
     }
 }
 
-/* Gráficos */
-.Graficos {
-    margin-top: 60px;
-    text-transform: capitalize;
-}
-
-.SegmentoLevantamento {
-    width: 100%;
-    height: 300px;
-    padding: 10px 10px 30px 10px;
-    margin-top: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.SegmentoLevantamento ul {
-    list-style: none;
-    display: flex;
-}
-
-.SegmentoLevantamento ul li {
-    margin: 10px;
-    color: gray;
-    cursor: pointer;
-}
-
-.SegmentoLevantamento ul .Ativo {
-    color: #000;
-    border-bottom: 1px solid #000;
-}
-
-.SegmentoLevantamento .Levantamento {
-    display: flex;
-}
-
-/* Sessão */
-.Sessao {
-    width: 33%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    background: rgb(235, 233, 233);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-
-.Sessao p {
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.Sessao button {
-    background: #000;
-    color: #fff;
-    padding: 7px 10px;
-    border-radius: 10px;
-    margin-top: 3rem;
-    cursor: pointer;
-}
-
-.Sessao button:hover {
-    background: rgba(0, 0, 0, 0.842);
-}
-
-.Sessao i {
-    font-size: 7rem;
-    float: right;
-    margin: -20px 20px 20px 0;
-}
-
-.Comment {
-    color: rgb(94, 23, 90);
-}
-
-
-/* Medidas */
-.Medidas {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.MedidasIcone {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-}
-
-
 /* Perguntas*/
-.Perguntas{
-   
+.Questions{
     margin-left: 40px;
     height: 500px;
     width: 1120px;
@@ -327,34 +226,34 @@ div.panel {
     transition: 0.6s ease-in-out;
     opacity: 0;
 }
+
 .FaqContainer {
     max-width: 600px;
     margin: 0 auto;
-  }
+}
 
-  .FaqItem {
+.FaqItem {
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 10px;
-    width: 1120px;
+    width: 1030px;
     overflow: hidden;
-  }
+}
 
-  .FaqQuestion {
+.FaqQuestion {
     background-color: #f0f0f0;
     padding: 15px;
-    
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .FaqQuestion:hover {
+.FaqQuestion:hover {
     background-color: #e0e0e0;
-  }
+}
 
-  .FaqAnswer {
+.FaqAnswer {
     max-height: 0;
     overflow: hidden;
     background-color: #fff;
@@ -362,9 +261,54 @@ div.panel {
     font-size: 16px;
     line-height: 1.5;
     transition: max-height 0.4s ease, padding 0.4s ease;
-  }
+}
 
-  .FaqItem.Active .FaqAnswer {
+.FaqItem.Active .FaqAnswer {
     max-height: 150px; 
     padding: 15px;
-  }
+}
+
+/* Popups */
+.PopupForm {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.PopupForm.show {
+    display: block; 
+}
+
+.PopupFormText {
+    background-color: white; 
+    margin: 20% auto; 
+    padding: 30px; 
+    border: 2px solid #420847; 
+    width: 80%; 
+    border-radius: 10px;
+}
+
+.Close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.Close:hover {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+.Close:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+}

@@ -18,3 +18,4 @@ function HidePopup(PopupId) {
         Popup.classList.remove('show'); // Oculta o pop-up
     }
 }
+
