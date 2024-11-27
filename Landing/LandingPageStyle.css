@@ -15,13 +15,13 @@ body {
     width: 100%;
     overflow: hidden;
 }
-.Agrupamentos {
+.GroupingsCard {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.Agrupamento {
+.Grouping {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -31,19 +31,19 @@ body {
     width: 300px;
 }
 
-.Agrupamento img {
+.Grouping img {
     border-radius: 10px;
     height: 400px;
     width: 100%;
     object-fit: cover;
 }
 
-.Agrupamento h3 {
+.Grouping h3 {
     margin-top: 15px;
     font-size: 1.5em;
 }
 
-.Agrupamento p {
+.Grouping p {
     margin-top: 10px;
     font-size: 1em;
     color: #333;
@@ -55,7 +55,7 @@ body {
     padding: 20px;
 }
 
-.Principal {
+.PrincipalCard {
     width: 80%; 
     margin: 2rem auto;
     display: flex;
@@ -67,7 +67,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.TextoPrincipal {
+.PrincipalText {
     display: flex;
     align-items: center;
 }
@@ -78,21 +78,21 @@ body {
     margin-right: 50px; 
 }
 
-.ConteudoPrincipal {
+.PrincipalContent {
     max-width: 600px;
 }
 
-.ConteudoPrincipal h1 {
+.PrincipalContent h1 {
     margin: 0;
     font-size: 2.5em;
 }
 
-.ConteudoPrincipal p {
+.PrincipalContent p {
     font-size: 1.2em;
     line-height: 1.5;
 }
 
-.Cadastre-Se_Button{
+.RegisterButton{
     color:yellow ;
 };
 
@@ -155,7 +155,7 @@ nav ul a:hover:after {
     width: 100%;
 }
 
-.Principal {
+.PrincipalCard {
     width: 90%;
     margin: 2rem auto;
     display: flex;
@@ -167,29 +167,29 @@ nav ul a:hover:after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Imagens-pista, .TextoPrincipal {
+.Images-pista, .PrincipalText {
     flex-basis: 50%;
 }
 
-.Imagens-pista img {
+.Images-pista img {
     width: 50%;
     border-radius: 70px;
 }
 
-.Principal h1 {
+.PrincipalCard h1 {
     font-size: 60px;
     letter-spacing: 1px;
     color: #ffcc00;
 }
 
-.Principal p {
+.PrincipalCard p {
     margin-top: 10px;
     font-size: 15px;
     letter-spacing: 1px;
     color: #333;
 }
 
-.Principal button {
+.PrincipalCard button {
     margin-top: 2.5rem;
     outline: none;
     border: none;
@@ -201,7 +201,7 @@ nav ul a:hover:after {
     cursor: pointer;
 }
 
-.BlocoMeio {
+.MiddleCard {
     width: 90%;
     margin: 2rem auto;
     display: flex;
@@ -209,7 +209,7 @@ nav ul a:hover:after {
     flex-wrap: wrap;
 }
 
-.Blocos {
+.Cards {
     display: flex;
     align-items: center;
     background: #fff;
@@ -219,7 +219,7 @@ nav ul a:hover:after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Blocos .Imagens {
+.Cards .Images {
     width: 8rem;
     height: 8rem;
     border-radius: 10px;
@@ -230,28 +230,28 @@ nav ul a:hover:after {
     transition: 0.5s;
 }
 
-.Blocos .Imagens img {
+.Cards .Images img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.Imagens:hover {
+.Images:hover {
     background-color: rgba(73, 66, 52, 0.7);
 }
 
-.Blocos .TextoBlocos {
+.Cards .CardTexts {
     margin: 0 0 0 1rem;
 }
 
-.Blocos .TextoBlocos p {
+.Cards .CardTexts p {
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
 
-#BlocoSecundario, #BlocoTerciario {
+#SecondaryCard, #TertiaryCard {
     padding: 50px 20px;
     text-align: center;
     background: #fff;
@@ -261,19 +261,19 @@ nav ul a:hover:after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#BlocoSecundario h2, #BlocoTerciario h2 {
+#SecondaryCard h2, #TertiaryCard h2 {
     font-size: 36px;
     color: #4b0082; 
     margin-bottom: 30px;
 }
 
-.Agrupamentos {
+.GroupingsCard {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.Agrupamento {
+.Grouping {
     background: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -282,13 +282,13 @@ nav ul a:hover:after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Agrupamento h3 {
+.Grouping h3 {
     font-size: 24px;
     color: #4b0082; 
     margin-bottom: 10px;
 }
 
-.Agrupamento p {
+.Grouping p {
     font-size: 16px;
     color: #333;
 }
@@ -311,24 +311,24 @@ nav ul a:hover:after {
         margin: 1rem 0;
     }
 
-    .ConteudoPrincipal h1 {
+    .PrincipalContent h1 {
         font-size: 1em;
     }
 
-    .ConteudoPrincipal p {
+    .PrincipalContent p {
         font-size: 1em;
     }
 
-    .BlocoMeio {
+    .MiddleCard {
         flex-direction: column;
     }
 
-    .Blocos {
+    .Card {
         width: 100%;
         margin: 1rem 0;
     }
 
-    .Agrupamento {
+    .Grouping {
         width: 100%;
         padding: 15px;
     }
@@ -347,16 +347,16 @@ nav ul a:hover:after {
         width: 70%;
     }
 
-    .BlocoMeio {
+    .MiddleCard {
         flex-direction: column;
         align-items: center;
     }
 
-    .Blocos .TextoBlocos p {
+    .Card .CardTexts p {
         font-size: 14px;
     }
 
-    .Agrupamento img {
+    .Grouping img {
         height: 250px;
     }
 }

@@ -120,14 +120,14 @@ body {
     transform: translateX(100%); 
 }
 
-.Cadastro {
+.Register {
     left: 0; 
     width: 50%;
     opacity: 0; 
     z-index: 1;
 }
 
-.Container.active .Cadastro {
+.Container.active .Register {
     transform: translateX(100%); 
     opacity: 1; 
     z-index: 5; 
@@ -145,11 +145,11 @@ body {
     }
 }
 
-.Icones {
+.Icons {
     margin: 20px 0; 
 }
 
-.Icones a {
+.Icons a {
     border: 1px solid #ccc; 
     border-radius: 20%; 
     display: inline-flex; 
@@ -160,7 +160,7 @@ body {
     height: 40px; 
 }
 
-.AlternarContainer {
+.ExchangeContainer {
     position: absolute; 
     top: 0; 
     left: 50%; 
@@ -172,12 +172,12 @@ body {
     z-index: 1000; 
 }
 
-.Container.active .AlternarContainer {
+.Container.active .ExchangeContainer {
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0; 
 }
 
-.Alternar {
+.Toggle {
     background-color: #ffd000;
     height: 100%;
     background: linear-gradient(to right, #ccaa13, #512da8); 
@@ -190,11 +190,11 @@ body {
     transition: all 0.6s ease-in-out; 
 }
 
-.Container.active .Alternar {
+.Container.active .Toggle {
     transform: translateX(50%); 
 }
 
-.AlternarPainel {
+.TogglePainel {
     position: absolute;
     width: 50%; 
     height: 100%; 
@@ -209,19 +209,19 @@ body {
     transition: all 0.6s ease-in-out; 
 }
 
-.AlternarEsquerda {
+.ToggleLeft {
     transform: translateX(-200%); 
 }
 
-.Container.active .AlternarEsquerda {
+.Container.active .ToggleLeft {
     transform: translateX(0); 
 }
 
-.AlternarDireita {
+.ToggleRight {
     right: 0; 
     transform: translateX(0); 
 }
 
-.Container.active .AlternarDireita {
+.Container.active .ToggleRight {
     transform: translateX(200%); 
 }

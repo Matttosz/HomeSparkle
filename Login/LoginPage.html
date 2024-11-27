@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="Container" id="Container">
-        <div class="FormContainer Cadastro">
-            <form action="/Dashboard/DashboardPage.html">
+        <div class="FormContainer Register">
+            <form action="DatabaseInjection.php" method="POST">
                 <h1>Criar conta</h1>
-                <div class="Icones">
+                <div class="Icons">
                     <a href="#" class="Icon"><i class="fa-brands fa-google"></i></a>
                     <a href="#" class="Icon"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
@@ -26,11 +26,11 @@
                 </form>
         </div>
         <div class="FormContainer Login">
-            <form action="/Dashboard/DashboardPage.html">
+            <form action="processPage.Php" method="POST">
                 <h1>Entre</h1>
-                <div class="Icones">
-                    <a href="#" class="Icone"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="Icone"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="Icons">
+                    <a href="#" class="Icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="Icon"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
                 <span>ou use seu e-mail</span>
                 <input type="email" name="UserEmail" placeholder="E-mail">
@@ -39,14 +39,14 @@
                 <button>Entrar</button>
             </form>
         </div>
-        <div class="AlternarContainer">
-            <div class="Alternar">
-                <div class="AlternarPainel AlternarEsquerda">
+        <div class="ExchangeContainer">
+            <div class="Toggle">
+                <div class="TogglePainel ToggleLeft">
                     <h1><img src="/Landing/img/LogoHomeSparkle.png" alt="Lâmpada" class="Logo"> HomeSparkle</h1>
                     <p>Entre com seu e-mail pessoal para acessar as funcionalidades</p>
                     <button class="Ocultar" id="Login">Entrar</button>
                 </div>
-                <div class="AlternarPainel AlternarDireita">
+                <div class="TogglePainel ToggleRight">
                     <h1><img src="/Landing/img/LogoHomeSparkle.png" alt="Lâmpada" class="Logo"> HomeSparkle</h1>
                     <p>Registre-se com seu e-mail para ter acesso às funcionalidades</p>
                     <button class="Ocultar" id="Registro">Registre-se</button>
