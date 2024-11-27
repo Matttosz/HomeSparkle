@@ -14,34 +14,30 @@
     <div class="Container">
         <nav>
             <ul>
-                <li><a href="/Landing/LandingPage.html" class="Logo">
-                    <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
-                    <span class="Navegacao">HomeSparkle</span>
-                </a></li>
-                <li class="Highlight"><a href="/Dashboard/DashboardPage.html">
-                    <i class="fas fa-home"></i>
-                    <span class="Navegacao">Home</span>
-                </a></li>
+                <li><a href="/Landing/LandingPage.html" class="LogoProject">
+                        <img src="LogoHomeSparkle.png" alt="Logo HomeSparkle">
+                        <span class="Navegation">HomeSparkle</span>
+                    </a></li>
+                <li class="Destaque"><a href="#">
+                        <i class="fas fa-home"></i>
+                        <span class="Navegation">Home</span>
+                    </a></li>
                 <li><a href="#">
-                    <i class="fas fa-user"></i>
-                    <span class="Navegacao">Perfil do Usuário</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="fas fa-chart-bar"></i>
-                    <span class="Navegacao">Questionamentos</span>
-                </a></li>
+                        <i class="fas fa-user"></i>
+                        <span class="Navegation">Perfil do Usuário</span>
+                    </a></li>
                 <li><a href="https://github.com/Matttosz/HomeSparkle">
-                    <i class="fas fa-brands fa-github"></i>
-                    <span class="Navegacao">Sobre nós</span>
-                </a></li>
-                <li><a href="PerguntasFrequentes.html">
-                    <i class="fas fa-question-circle"></i>
-                    <span class="Navegacao">Contate-Nos</span>
-                </a></li>
-                <li><a href="/Landing/LandingPage.html" class="BotaoSair">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span class="Navegacao">Sair</span>
-                </a></li>
+                        <i class="fas fa-brands fa-github"></i>
+                        <span class="Navegation">Sobre nós</span>
+                    </a></li>
+                <li><a href="#" onclick="ShowPopup('FormContainer')">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="Navegation">Questionamentos</span>
+                    </a></li>
+                <li><a href="/Landing/LandingPage.html" class="OutButton">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="Navegation">Sair</span>
+                    </a></li>
             </ul>
         </nav>
 
@@ -70,19 +66,59 @@
             s[0]&&""!=s[0]&&(x.from=s[0]);s[1]&&""!=s[1]&&(x.to=s[1]);s[2]&&""!=s[2]&&(x.color=s[2]);e.highlights.push(x)}break;case "animation":d[1]&&(e.animation||(e.animation={}),"fn"==d[1]&&/^\s*function\s*\(/.test(g)&&(g=eval("("+g+")")),e.animation[d[1]]=g);break;default:d=b(d);if("onready"==d)continue;if("majorTicks"==d)g=g.split(/\s+/);else if("strokeTicks"==d||"glow"==d)g="true"==g?!0:!1;else if("valueFormat"==d)if(g=g.split("."),2==g.length)g={"int":parseInt(g[0],10),dec:parseInt(g[1],10)};else continue;
             e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.getAttribute("data-value")));k.getAttribute("data-onready")&&(e.onready=function(){eval(this.config.renderTo.getAttribute("data-onready"))});e.draw()}});window.Gauge=Gauge;
             <!-- Gauge Code Ends -->
+    const voltage = 220; 
+    let ValuePower = 1500; 
+    let ValueFlow = ValuePower / voltage; 
+    let totalCost = 0; // Variável para acumular o custo total
+
+    function simulatePowerUsage() {
+        const basePower = 1500; 
+        const maxVariation = 400; 
+        const noise = Math.random() * 10 - 5; 
+        const timeFactor = new Date().getTime() / 6000; 
+        const sinoidalWave = Math.sin(timeFactor) * maxVariation; 
+
+        ValuePower = Math.max(basePower + sinoidalWave + noise, 0); 
+        ValueFlow = ValuePower / voltage; 
+    }
+
+    function DadosVindosDoArduino() {
+        simulatePowerUsage();
+        const currentCost = calculateCost(ValuePower);
+        totalCost += currentCost / 3600; // Atualiza o custo total considerando o intervalo de 1 segundo
+        document.getElementById("Potencia").innerHTML = ValuePower.toFixed(2) + " W";
+        document.getElementById("Corrente").innerHTML = ValueFlow.toFixed(3) + " A";
+        document.getElementById("Consumo").innerHTML = "R$ " + totalCost.toFixed(2);
+    }
+
+    function calculateCost(potenciaWatts) {
+        const taxes = 0.8; 
+        const powerInKiloWatts = potenciaWatts / 1000; 
+        return powerInKiloWatts * taxes; 
+    }
+
+    // Atualiza os valores a cada segundo
+    function GetArduinoInputs() {
+        DadosVindosDoArduino();
+        setTimeout(GetArduinoInputs, 1000); // Reexecuta após 1 segundo
+    }
+
+    // Executa ao carregar a página
+    window.onload = function () {
+        GetArduinoInputs();
+    };
+    </script>
             </script>  
 
         <section class="PrincipalCard">
             <section class="Gauge">
                 <h1>Medidor de gasto de Energia</h1>
-                <canvas id="an_gauge_1" data-major-ticks="0 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500"
-                    data-type="canv-gauge" data-min-value="0" data-max-value="5500"
-                    data-onready="setInterval( function() { Gauge.Collection.get('an_gauge_1').setValue(data_val);}, 1000);"></canvas>
-                <canvas id="an_gauge_2" width="200px" height="200px" data-type="canv-gauge"></canvas>
+                <canvas id="an_gauge_1" data-major-ticks="0 500 1000 1500 2000 2500 3000 3500 4000" data-type="canv-gauge" data-min-value="0" data-max-value="4000" data-onready="setInterval(function() { Gauge.Collection.get('an_gauge_1').setValue(ValuePower); }, 1000);"></canvas>
+                 <canvas id="an_gauge_2" data-major-ticks="0 2 4 6 8 10 12 14 16 18" data-type="canv-gauge" data-min-value="0" data-max-value="20" data-onready="setInterval(function() { Gauge.Collection.get('an_gauge_2').setValue(ValueFlow); }, 1000);"></canvas>
                 <div class="Statistics">
-                    <pre><img src="/ImagesAssets/poder.png" alt="Power" class="StatisticsIcon" onclick="ShowPopup('PopupPower')"> Potência(W): <span id="input3">...</span></pre>
-                    <pre><img src="/ImagesAssets/controle-de-energia.png" alt="Current" class="StatisticsIcon" onclick="ShowPopup('PopupCurrent')"> Corrente(A): <span id="input4">...</span></pre>
-                    <pre><img src="/ImagesAssets/moedas.png" alt="Spent" class="StatisticsIcon" onclick="ShowPopup('PopupSpent')"> Consumo(R$): <span id="input5">...</span></pre>
+                    <pre><img src="/ImagesAssets/poder.png" alt="Power" class="StatisticsIcon" onclick="ShowPopup('PopupPower')"> Potência(W): <span id="Potencia">...</span></pre>
+                    <pre><img src="/ImagesAssets/controle-de-energia.png" alt="Current" class="StatisticsIcon" onclick="ShowPopup('PopupCurrent')"> Corrente(A): <span id="Corrente">...</span></pre>
+                    <pre><img src="/ImagesAssets/moedas.png" alt="Spent" class="StatisticsIcon" onclick="ShowPopup('PopupSpent')"> Consumo(R$): <span id="Consumo">...</span></pre>
                 </div>
             </section>
             
