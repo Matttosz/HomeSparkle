@@ -18,6 +18,7 @@ body {
     display: flex;
 }
 
+/* Sidebar */
 nav {
     position: fixed;
     top: 0;
@@ -88,16 +89,16 @@ nav a:hover .Navegation {
     color: #771777;
 }
 
-.Destaque a {
+.Highlight a {
     background: #eee;
     color: #771777;
 }
 
-.Destaque .fas {
+.Highlight .fas {
     color: #771777;
 }
 
-.Destaque .Navegation {
+.Highlight .Navegation {
     color: #771777;
 }
 
@@ -106,8 +107,24 @@ nav a:hover .Navegation {
     bottom: 0;
 }
 
+nav a#TipssNav {
+    position: relative;
+    color: black;
+    font-size: 14px;
+    display: table;
+    width: 270px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
 
-.BlocoPrincipal {
+nav a#TipssNav:hover {
+    background: #eee;
+    color: #771777;
+}
+
+
+/* Conteudo Principal */
+.PrincipalCard {
     display: flex; 
     flex-direction: column; 
     padding: 20px;
@@ -116,7 +133,8 @@ nav a:hover .Navegation {
     justify-content: space-between;
 }
 
-.MedidorEnergia {
+/* Medidor de Energia */
+.Gauge {
     margin-top: 20px;
     background: white;
     padding: 10px;
@@ -125,17 +143,30 @@ nav a:hover .Navegation {
     text-align: center;
 }
 
-.MedidorEnergia h1 {
+.Gauge h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+.Gauge canvas {
+    display: flexbox;
+    margin: auto; 
+}
+
+.Gauge pre {
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+/* Estilos Responsivos  */
 @media (max-width: 768px) {
-    .MedidorEnergia h1 {
+    .Gauge h1 {
         font-size: 20px;
     }
 
-    .Medidas {
+    .Statistics {
         flex-direction: column;
     }
 
@@ -143,20 +174,62 @@ nav a:hover .Navegation {
         font-size: 18px;
     }
 
-    .MedidasIcone {
+    .StatisticsIcon {
         width: 20px;
         height: 20px;
     }
 }
 
-.Questions{
-    margin-left: 40px;
-    height: 500px;
-    width: 1120px;
-    border-radius: 5px;
+
+/* Statistics */
+.Statistics {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
-.Popup {
+.StatisticsIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+/* Seção de Dicas */
+.Tips {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.Tips h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.TipsItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.TipsIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.TipsItem p {
+    font-size: 18px;
+    text-align: left;
+}
+
+
+/* PopUps Informativos*/
+.PopupCard {
     display: none;
     position: fixed;
     left: 50%;
@@ -166,103 +239,30 @@ nav a:hover .Navegation {
     border: 1px solid #888;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
     transition: opacity 0.3s, transform 0.3s;
     opacity: 0;
 }
 
-.PopupTexto {
+.PopupText {
     padding: 40px;
 }
 
-.Popup .Close {
+.PopupCard .Close {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
 
-.Popup.show {
+.PopupCard.show {
     display: block;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
 
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
 
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-}
-
-div.panel.show {
-    display: block;
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
-}
-
-.FaqContainer {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.FaqItem {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    width: 1030px;
-    overflow: hidden;
-}
-
-.FaqQuestion {
-    background-color: #f0f0f0;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.FaqQuestion:hover {
-    background-color: #e0e0e0;
-}
-
-.FaqAnswer {
-    max-height: 0;
-    overflow: hidden;
-    background-color: #fff;
-    padding: 0 15px;
-    font-size: 16px;
-    line-height: 1.5;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.FaqItem.Active .FaqAnswer {
-    max-height: 150px; 
-    padding: 15px;
-}
-
+/* Popup Formulário*/
 .PopupForm {
     display: none; 
     position: fixed; 
@@ -281,9 +281,9 @@ div.panel {
 
 .PopupFormText {
     background-color: white; 
-    margin: 20% auto; 
-    padding: 30px; 
-    border: 2px solid #420847; 
+    margin: 15% auto; 
+    padding: 25px; 
+    border: 1px solid #420847; 
     width: 80%; 
     border-radius: 10px;
 }
